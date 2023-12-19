@@ -2,12 +2,12 @@
 
 <!--INICIO del cont principal-->
 <div class="container">
-    <h1>Contenido principal</h1>
+    <h1>Libros</h1>
     
     
     
  <?php
-include_once '/bd/conexion.php';
+include_once 'bd/conexion.php';
 $objeto = new Conexion();
 $conexion = $objeto->Conectar();
 
@@ -34,9 +34,9 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                         <thead class="text-center">
                             <tr>
                                 <th>Id</th>
-                                <th>Nombre</th>
-                                <th>País</th>                                
-                                <th>Edad</th>  
+                                <th>Libro</th>
+                                <th>Area</th>                                
+                                <th>Cantida de libros</th>  
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -73,15 +73,15 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
         <form id="formPersonas">    
             <div class="modal-body">
                 <div class="form-group">
-                <label for="nombre" class="col-form-label">Nombre:</label>
+                <label for="nombre" class="col-form-label">Libro:</label>
                 <input type="text" class="form-control" id="nombre">
                 </div>
                 <div class="form-group">
-                <label for="pais" class="col-form-label">País:</label>
+                <label for="pais" class="col-form-label">Area:</label>
                 <input type="text" class="form-control" id="pais">
                 </div>                
                 <div class="form-group">
-                <label for="edad" class="col-form-label">Edad:</label>
+                <label for="edad" class="col-form-label">Cantidad de Libros:</label>
                 <input type="number" class="form-control" id="edad">
                 </div>            
             </div>

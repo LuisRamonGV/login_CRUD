@@ -1,23 +1,3 @@
-@font-face {
-  font-family: Poppins-Regular;
-  src: url('fuentes/poppins/Poppins-Regular.ttf'); 
-}
-
-@font-face {
-  font-family: Poppins-Medium;
-  src: url('fuentes/poppins/Poppins-Medium.ttf'); 
-}
-
-@font-face {
-  font-family: Poppins-Bold;
-  src: url('fuentes/poppins/Poppins-Bold.ttf'); 
-}
-
-@font-face {
-  font-family: Poppins-SemiBold;
-  src: url('fuentes/poppins/Poppins-SemiBold.ttf'); 
-}
-
 *{
 	margin: 0px; 
 	padding: 0px; 
@@ -47,6 +27,15 @@ button:hover {
 
 /*-- contenedor del Login--*/
 
+
+.imagen-superior {
+  position: absolute;
+  top: 130px;
+  left: 50;
+  width: 13%;
+  z-index: 1; /* Ajusta la opacidad de la imagen superior */
+}
+
 .container-login {
   width: 100%;  
   min-height: 100vh;
@@ -56,8 +45,18 @@ button:hover {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background: -webkit-linear-gradient(to right, #00dbde, #fc00ff);
-  background: linear-gradient(to right, #00dbde, #fc00ff);
+  position: relative;
+}
+
+.container-login::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(112, 168, 242, 0.6); /* Sombras azules */
+  z-index: -1; 
 }
 
 .wrap-login {
@@ -65,9 +64,7 @@ button:hover {
   background: #eceff1;
   border-radius: 20px;
   overflow: hidden;
-  padding: 77px 55px 53px 55px;
-  -webkit-box-shadow: 25px 40px 28px 0px rgba(0, 0, 0, 0.38);
- /* box-shadow: eje-x | eje-y | blur-radius | color */
+  padding: 210px 55px 53px 55px;
 }
 
 
@@ -79,8 +76,8 @@ button:hover {
 
 .login-form-title {
   display: block;
-  font-family: Poppins-Bold;
-  font-size: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
   color: #333333;
   line-height: 1.5;
   text-align: center;
@@ -98,7 +95,6 @@ button:hover {
 }
 
 .input100 {
-  font-family: Poppins-Regular;
   font-size: 15px;
   color: #555555;
   line-height: 1.2;
@@ -129,17 +125,6 @@ button:hover {
   left: 0;
   width: 0;
   height: 4px; /*ancho de la linea que hace el efecto de barra de progeso en el input al hacer foco*/
-
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
-
-  background: #6a7dfe;
-  background: -webkit-linear-gradient(left, #21d4fd, #b721ff);
-  background: -o-linear-gradient(left, #21d4fd, #b721ff);
-  background: -moz-linear-gradient(left, #21d4fd, #b721ff);
-  background: linear-gradient(left, #21d4fd, #b721ff);
 }
 
 .focus-efecto::after {
@@ -155,11 +140,6 @@ button:hover {
   top: 16px;
   left: 0px;
   padding-left: 5px;
-
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
 }
 
 .input100:focus + .focus-efecto::after {
@@ -209,22 +189,15 @@ button:hover {
   z-index: -1;
   width: 300%;
   height: 100%;
-  background: #a64bf4;
-  background: -webkit-linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
-  background: -o-linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
-  background: -moz-linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
-  background: linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
+  background: #260c9a;
+
   top: 0;
   left: -100%;
 
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
 }
 
 .login-form-btn {
-  font-family: Poppins-Medium;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
   color: #fff;
   line-height: 1.2;

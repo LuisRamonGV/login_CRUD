@@ -68,7 +68,7 @@ $(document).on("click", ".btnBorrar", function(){
             dataType: "json",
             data: {opcion:opcion, id:id},
             success: function(){
-                tablaPersonas.row(fila.parents('tr')).remove().draw();
+                tablaPersonas.row(fila.closest('tr')).remove().draw();
             }
         });
     }   
